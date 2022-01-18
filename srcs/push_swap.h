@@ -22,5 +22,6 @@ void malloc_error();
 void insert_error();
 void arg_error();
 void int_error();
+void duplicate_error();
 
 #endif

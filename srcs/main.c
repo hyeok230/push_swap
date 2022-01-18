@@ -38,11 +38,65 @@ int ft_atoi(const char *str) {
         if (ft_isdigit(str[i]) == FALSE)
             arg_error();
         ret = ret * 10 + (str[i] - '0');
-        if ((ret > 2147483647 && sign == 1) || (ret > 2147483647 && sign == -1))
+        if ((ret > 2147483647 && sign == 1) || (ret > 2147483648 && sign == -1))
             int_error();
         i++;
     }
     return (sign * ret); 
+}
+
+int check_duplicate(t_LinkedDeque *stack) {
+    int i;
+    t_DequeNode* curr;
+    t_DequeNode* temp;
+
+    i = 0;
+    curr = stack->pFrontNode;
+    while (i < stack->currentElementCount) {
+        temp = curr->pRLink;
+        while (temp) {
+            if (temp->data == curr->data)
+                return (TRUE);
+            temp = temp->pRLink;
+        }
+        curr = curr->pRLink;
+        i++;
+    }
+    return (FALSE);
+}
+
+int check_sorted(t_LinkedDeque *stack) {
+    int i;
+    t_DequeNode* curr;
+    t_DequeNode* temp;
+    int min;
+
+    i = 0;
+    min = 0;
+    curr = stack->pFrontNode;
+    while (i < stack->currentElementCount)
+    {
+        min = curr->data;
+        temp = curr->pRLink;
+        while (temp)
+        {
+            if (min > temp->data) 
+                return (FALSE);
+            temp = temp->pRLink;
+        }
+        curr = curr->pRLink;
+        i++;
+    }
+    return (TRUE);
+}
+
+void check_stack(t_LinkedDeque *stack) {
+    // 1. 중복된 값이 있는지 확인하기
+    if (check_duplicate(stack) == TRUE)
+        duplicate_error();
+    // 2. 이미 정렬되어 할 것이 없는지 확인하기
+    if (check_sorted(stack) == TRUE)
+        exit(0);
 }
 
 void init_a(t_LinkedDeque *a, int argc, char** argv) {
@@ -61,7 +115,7 @@ void init_a(t_LinkedDeque *a, int argc, char** argv) {
             insert_error();
         i++;
     }
-    // check_stack(a) <- 중복된 값이 있는지, 소팅이 끝났는지 확인한다.
+    check_stack(a);
 }
 
 int main(int argc, char** argv) {

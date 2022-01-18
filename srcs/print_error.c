@@ -17,4 +17,10 @@ void arg_error() {
 
 void int_error() {
     write(1, "integer range ERROR\n", 20);
+    exit(1);
+}
+
+void duplicate_error(){
+    write(1, "argument duplicate ERROR\n", 25);
+    exit(1);
 }
