@@ -24,6 +24,8 @@ NAME		= push_swap
 FOLDER	= ./srcs/
 
 SRCS	= main.c\
+			linkeddeque.c\
+			print_error.c\
 
 SOURCES =  $(addprefix $(FOLDER), $(SRCS))
 

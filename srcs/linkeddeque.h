@@ -1,9 +1,15 @@
 #ifndef _LINKED_DEQUE_
 #define _LINKED_DEQUE_
 
+/*
+** =============================================================================
+** Struct Type Definitions
+** =============================================================================
+*/
+
 typedef struct s_DequeNodeType
 {
-	char data;
+	int data;
 	struct s_DequeNodeType* pRLink;
 	struct s_DequeNodeType* pLLink;
 } t_DequeNode;
@@ -25,6 +31,7 @@ t_DequeNode* peekRearLD(t_LinkedDeque* pDeque);
 void deleteLinkedDeque(t_LinkedDeque* pDeque);
 int isLinkedDequeFull(t_LinkedDeque* pDeque);
 int isLinkedDequeEmpty(t_LinkedDeque* pDeque);
+void displayDeque(t_LinkedDeque* pDeque);
 
 #endif
 
