@@ -28,6 +28,7 @@ SRCS	= main.c\
 			print_error.c\
 			free_stack.c\
 			ft_swap.c\
+			ft_push.c\
 			
 
 SOURCES =  $(addprefix $(FOLDER), $(SRCS))

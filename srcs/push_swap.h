@@ -44,4 +44,14 @@ void ft_ss(t_LinkedDeque *a, t_LinkedDeque *b);
 void free_stack(t_LinkedDeque *stack);
 void free_all(t_LinkedDeque *a, t_LinkedDeque *b);
 
+/*
+** =============================================================================
+** ft_push.c
+** =============================================================================
+*/
+
+int push_stack(t_LinkedDeque *fromStack, t_LinkedDeque *toStack);
+void ft_pa(t_LinkedDeque *a, t_LinkedDeque *b);
+void ft_pb(t_LinkedDeque *a, t_LinkedDeque *b);
+
 #endif

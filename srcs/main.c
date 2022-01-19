@@ -129,7 +129,7 @@ void init_a(t_LinkedDeque *a, int argc, char** argv) {
 
 int main(int argc, char** argv) {
     t_LinkedDeque   *a;
-    // t_LinkedDeque   *b;
+    t_LinkedDeque   *b;
 
     if (argc < 2)
         return (1);
@@ -139,11 +139,14 @@ int main(int argc, char** argv) {
     displayDeque(a);
     ft_sa(a);
     displayDeque(a);
-    free_stack(a);
-    // b = createLinkedDeque();
+    b = createLinkedDeque();
+    ft_pb(a, b);
+    displayDeque(a);
+    printf("=============================\n");
+    displayDeque(b);
     // if (a->currentElementCount == 5) 
     //     5일 경우
     // else
     //     push_swap(a, b);
-    // free_all(a, b);
+    free_all(a, b);
 }
