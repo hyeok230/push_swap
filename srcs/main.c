@@ -93,10 +93,16 @@ int check_sorted(t_LinkedDeque *stack) {
 void check_stack(t_LinkedDeque *stack) {
     // 1. 중복된 값이 있는지 확인하기
     if (check_duplicate(stack) == TRUE)
+    {
+        free_stack(stack);
         duplicate_error();
+    }
     // 2. 이미 정렬되어 할 것이 없는지 확인하기
     if (check_sorted(stack) == TRUE)
+    {
+        free_stack(stack);
         exit(0);
+    }
 }
 
 void init_a(t_LinkedDeque *a, int argc, char** argv) {
@@ -112,7 +118,10 @@ void init_a(t_LinkedDeque *a, int argc, char** argv) {
         element.pLLink = NULL;
         element.pRLink = NULL;
         if (insertRearLD(a, element) == FALSE) 
+        {
+            free_stack(a);
             insert_error();
+        }
         i++;
     }
     check_stack(a);
@@ -125,9 +134,16 @@ int main(int argc, char** argv) {
     if (argc < 2)
         return (1);
     a = createLinkedDeque();
-    // b = createLinkedDeque();
     init_a(a, argc, argv);
+
     displayDeque(a);
-    // push_swap(a, b);
-    // delete a, b
+    ft_sa(a);
+    displayDeque(a);
+    free_stack(a);
+    // b = createLinkedDeque();
+    // if (a->currentElementCount == 5) 
+    //     5일 경우
+    // else
+    //     push_swap(a, b);
+    // free_all(a, b);
 }

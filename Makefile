@@ -26,6 +26,9 @@ FOLDER	= ./srcs/
 SRCS	= main.c\
 			linkeddeque.c\
 			print_error.c\
+			free_stack.c\
+			ft_swap.c\
+			
 
 SOURCES =  $(addprefix $(FOLDER), $(SRCS))
 
