@@ -29,6 +29,8 @@ SRCS	= main.c\
 			free_stack.c\
 			ft_swap.c\
 			ft_push.c\
+			ft_rotate.c\
+			ft_reverse_rotate.c\
 			
 
 SOURCES =  $(addprefix $(FOLDER), $(SRCS))

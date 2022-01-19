@@ -78,7 +78,6 @@ t_DequeNode* deleteFrontLD(t_LinkedDeque* pDeque) {
         return (NULL);
     }
     if (isLinkedDequeEmpty(pDeque)) {
-        printf("pDeque empty Error\n");
         return (NULL);
     }
     retNode = pDeque->pFrontNode;
@@ -101,7 +100,6 @@ t_DequeNode* deleteRearLD(t_LinkedDeque* pDeque) {
         return (NULL);
     }
     if (isLinkedDequeEmpty(pDeque)) {
-        printf("pDeque empty Error\n");
         return (NULL);
     }
     retNode = pDeque->pRearNode;

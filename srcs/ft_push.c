@@ -4,10 +4,10 @@ int push_stack(t_LinkedDeque *fromStack, t_LinkedDeque *toStack)
 {
     t_DequeNode *element;
 
-    element = deleteRearLD(fromStack);
+    element = deleteFrontLD(fromStack);
     if (element == NULL)
         return (FALSE);
-    if (insertRearLD(toStack, *element) == FALSE)
+    if (insertFrontLD(toStack, *element) == FALSE)
     {
         free_all(fromStack, toStack);
         insert_error();

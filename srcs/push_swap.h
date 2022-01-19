@@ -54,4 +54,23 @@ int push_stack(t_LinkedDeque *fromStack, t_LinkedDeque *toStack);
 void ft_pa(t_LinkedDeque *a, t_LinkedDeque *b);
 void ft_pb(t_LinkedDeque *a, t_LinkedDeque *b);
 
+/*
+** =============================================================================
+** ft_rotate.c
+** =============================================================================
+*/
+
+int rotate_stack(t_LinkedDeque *stack);
+void ft_ra(t_LinkedDeque *a);
+void ft_rb(t_LinkedDeque *b);
+
+/*
+** =============================================================================
+** ft_reverse_rotate.c
+** =============================================================================
+*/
+
+int reverse_rotate_stack(t_LinkedDeque *stack);
+void ft_rra(t_LinkedDeque *a);
+void ft_rrb(t_LinkedDeque *b);
 #endif

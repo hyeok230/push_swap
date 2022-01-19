@@ -9,16 +9,16 @@ int swap_stack(t_LinkedDeque *stack)
 
     if (stack->currentElementCount < 2)
         return (FALSE);
-    first = deleteRearLD(stack);
-    second = deleteRearLD(stack);
+    first = deleteFrontLD(stack);
+    second = deleteFrontLD(stack);
     // pFirst = *first;
     // pSecond = *second;
-    if (insertRearLD(stack, *first) == FALSE)
+    if (insertFrontLD(stack, *first) == FALSE)
     {
         free_stack(stack);
         insert_error();
     }
-    if (insertRearLD(stack, *second) == FALSE)
+    if (insertFrontLD(stack, *second) == FALSE)
     {
         free_stack(stack);
         insert_error();

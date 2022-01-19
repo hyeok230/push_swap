@@ -141,9 +141,31 @@ int main(int argc, char** argv) {
     displayDeque(a);
     b = createLinkedDeque();
     ft_pb(a, b);
+    ft_pb(a, b);
+    ft_pb(a, b);
     displayDeque(a);
     printf("=============================\n");
     displayDeque(b);
+    printf("=============================\n");
+    ft_ra(a);
+    ft_rb(b);
+    displayDeque(a);
+    printf("=============================\n");
+    displayDeque(b);
+    printf("=============================\n");
+    ft_rra(a);
+    ft_rrb(b);
+    displayDeque(a);
+    printf("=============================\n");
+    displayDeque(b);
+    printf("=============================\n");
+    ft_pa(a, b);
+    ft_pa(a, b);
+    ft_pa(a, b);
+    displayDeque(a);
+    printf("=============================\n");
+    displayDeque(b);
+    printf("=============================\n");
     // if (a->currentElementCount == 5) 
     //     5일 경우
     // else

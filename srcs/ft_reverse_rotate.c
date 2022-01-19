@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int rotate_stack(t_LinkedDeque *stack)
+int reverse_rotate_stack(t_LinkedDeque *stack)
 {
     t_DequeNode *element;
     int length;
@@ -8,10 +8,10 @@ int rotate_stack(t_LinkedDeque *stack)
     length = stack->currentElementCount;
     if (length < 2)
         return (FALSE);
-    element = deleteFrontLD(stack);
+    element = deleteRearLD(stack);
     if (element == NULL)
         return (FALSE);
-    if (insertRearLD(stack, *element) == FALSE)
+    if (insertFrontLD(stack, *element) == FALSE)
     {
         free_stack(stack);
         insert_error();
@@ -20,16 +20,16 @@ int rotate_stack(t_LinkedDeque *stack)
     return (TRUE);
 }
 
-void ft_ra(t_LinkedDeque *a)
+void ft_rra(t_LinkedDeque *a)
 {
-    if (rotate_stack(a) == FALSE)
+    if (reverse_rotate_stack(a) == FALSE)
         return ;
-    write(1, "ra\n", 3);
+    write(1, "rra\n", 4);
 }
 
-void ft_rb(t_LinkedDeque *b)
+void ft_rrb(t_LinkedDeque *b)
 {
-    if (rotate_stack(b) == FALSE)
+    if (reverse_rotate_stack(b) == FALSE)
         return ;
-    write(1, "rb\n", 3);
+    write(1, "rrb\n", 4);
 }
