@@ -21,28 +21,39 @@ NAME		= push_swap
 # File Variables
 # =============================================================================
 
+INCLUDE = -Iinclude/
 FOLDER	= ./srcs/
+D_SORT = ./sort/
+D_FUNCTION = ./function/
 
 SRCS	= main.c\
 			linkeddeque.c\
 			print_error.c\
 			free_stack.c\
-			ft_swap.c\
-			ft_push.c\
-			ft_rotate.c\
-			ft_reverse_rotate.c\
+			get_max_mid_min.c\
+			$(D_FUNCTION)ft_swap.c\
+			$(D_FUNCTION)ft_push.c\
+			$(D_FUNCTION)ft_rotate.c\
+			$(D_FUNCTION)ft_reverse_rotate.c\
+			$(D_SORT)a_to_b.c\
+			$(D_SORT)sort_args_three_a.c\
+			$(D_SORT)sort_args_three_b.c\
+			$(D_SORT)sort_args_under_three.c\
+
 			
 
 SOURCES =  $(addprefix $(FOLDER), $(SRCS))
 
 OBJECTS = $(SOURCES:%.c=%.o)
-OBJECTS_BONUS = $(SOURCES_BONUS:%.c=%.o)
 
 # =============================================================================
 # Target Generating
 # =============================================================================
 
 all: $(NAME)
+
+%.o: %.c
+	${CC} ${CFLAGS} $(INCLUDE) -c $< -o $@
 
 $(NAME): $(OBJECTS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJECTS)
@@ -56,7 +67,4 @@ fclean: clean
 
 re: fclean all
 
-bonus: $(OBJECTS_BONUS)
-	$(CC) $(CFLAGS) $(OPTIONS) -o $(NAME) $(OBJECTS_BONUS)
-
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

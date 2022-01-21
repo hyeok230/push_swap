@@ -21,6 +21,12 @@ typedef struct s_LinkedDequeType
 	t_DequeNode* pRearNode;
 } t_LinkedDeque;
 
+/*
+** =============================================================================
+** linkeddeque.c
+** =============================================================================
+*/
+
 t_LinkedDeque* createLinkedDeque();
 int insertFrontLD(t_LinkedDeque* pDeque, t_DequeNode element);
 int insertRearLD(t_LinkedDeque* pDeque, t_DequeNode element);

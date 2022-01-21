@@ -139,6 +139,6 @@ int main(int argc, char** argv) {
     // if (a->currentElementCount == 5) 
     //     5일 경우
     // else
-    //     push_swap(a, b);
+    a_to_b(a->currentElementCount, a, b);
     free_all(a, b);
 }
