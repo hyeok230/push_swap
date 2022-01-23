@@ -43,7 +43,7 @@ int get_mid_value(int list[], int size)
     int i;
     int temp;
 
-    while (--size)
+    while (size--)
     {
         i = 0;
         while (i < size)
@@ -54,6 +54,7 @@ int get_mid_value(int list[], int size)
                 list[i] = list[i + 1];
                 list[i + 1] = temp;
             }
+            i++;
         }
     }
     return (list[2]);
@@ -71,7 +72,7 @@ int get_args_five_mid_value(t_LinkedDeque *stack)
     i = 0;
     size = 5;
     node = stack->pFrontNode;
-    while (--size)
+    while (size--)
     {
         list[i] = node->data;
         node = node->pRLink;

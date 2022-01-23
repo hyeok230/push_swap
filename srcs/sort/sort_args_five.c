@@ -69,8 +69,7 @@ void sort_five(t_LinkedDeque *a, t_LinkedDeque *b)
     t_sort sort;
 
     init_sort(&sort);
-    // mid = get_args_five_mid_value(a);
-    mid = 3;
+    mid = get_args_five_mid_value(a);
     while (1)
     {
         if (a->pFrontNode->data >= mid)
