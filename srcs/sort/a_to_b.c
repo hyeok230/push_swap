@@ -15,5 +15,7 @@ void a_to_b(int r, t_LinkedDeque *a, t_LinkedDeque *b)
     (void)b;
     if (r <= 3)
         sort_args_under_three(r, a, b, A);
+    if (r == 5)
+        sort_five(a, b);
     init_sort(&sort);
 }

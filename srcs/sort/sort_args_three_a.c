@@ -74,4 +74,3 @@ void sort_args_three_a(int r, t_LinkedDeque *a)
     else if (a->pFrontNode->pRLink->pRLink->data == min)
         a_three_min_bottom(a, max);
 }
-

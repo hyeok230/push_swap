@@ -142,4 +142,15 @@ void sort_args_three_b(int r, t_LinkedDeque *a, t_LinkedDeque *b);
 void sort_args_two(t_LinkedDeque *a, t_LinkedDeque *b, int flag);
 void sort_args_under_three(int r, t_LinkedDeque *a, t_LinkedDeque *b, int flag);
 
+/*
+** =============================================================================
+** sort_args_five.c
+** =============================================================================
+*/
+
+void sort_args_five_a(int five, t_LinkedDeque *a, t_LinkedDeque *b);
+void sort_args_five_b(int five, t_LinkedDeque *a, t_LinkedDeque *b);
+void sort_args_five(int r, t_LinkedDeque *a, t_LinkedDeque *b, int flag);
+void sort_five(t_LinkedDeque *a, t_LinkedDeque *b);
+
 #endif

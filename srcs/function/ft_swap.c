@@ -35,7 +35,7 @@ void ft_sb(t_LinkedDeque *b)
 {
     if (swap_stack(b) == FALSE)
         return ;
-    write(1, "sa\n", 3);
+    write(1, "sb\n", 3);
 }
 
 void ft_ss(t_LinkedDeque *a, t_LinkedDeque *b)

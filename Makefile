@@ -39,6 +39,7 @@ SRCS	= main.c\
 			$(D_SORT)sort_args_three_a.c\
 			$(D_SORT)sort_args_three_b.c\
 			$(D_SORT)sort_args_under_three.c\
+			$(D_SORT)sort_args_five.c\
 
 			
 
