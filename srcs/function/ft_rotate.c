@@ -33,3 +33,12 @@ void ft_rb(t_LinkedDeque *b)
         return ;
     write(1, "rb\n", 3);
 }
+
+void ft_rr(t_LinkedDeque *a, t_LinkedDeque *b)
+{
+    if (rotate_stack(a) == FALSE)
+        return ;
+    if (rotate_stack(b) == FALSE)
+        return ;
+    write(1, "rr\n", 3);    
+}
