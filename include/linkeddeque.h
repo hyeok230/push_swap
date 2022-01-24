@@ -1,6 +1,7 @@
 #ifndef _LINKED_DEQUE_
 #define _LINKED_DEQUE_
 
+#include <stdlib.h>
 /*
 ** =============================================================================
 ** Struct Type Definitions
@@ -32,8 +33,6 @@ int insertFrontLD(t_LinkedDeque* pDeque, t_DequeNode element);
 int insertRearLD(t_LinkedDeque* pDeque, t_DequeNode element);
 t_DequeNode* deleteFrontLD(t_LinkedDeque* pDeque);
 t_DequeNode* deleteRearLD(t_LinkedDeque* pDeque);
-t_DequeNode* peekFrontLD(t_LinkedDeque* pDeque);
-t_DequeNode* peekRearLD(t_LinkedDeque* pDeque);
 void deleteLinkedDeque(t_LinkedDeque* pDeque);
 int isLinkedDequeFull(t_LinkedDeque* pDeque);
 int isLinkedDequeEmpty(t_LinkedDeque* pDeque);

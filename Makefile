@@ -26,9 +26,9 @@ FOLDER	= ./srcs/
 D_SORT = ./sort/
 D_FUNCTION = ./function/
 D_UTILS = ./utils/
+D_STACK = ./stack/
 
 SRCS	= main.c\
-			linkeddeque.c\
 			$(D_UTILS)check_stack.c\
 			$(D_UTILS)util.c\
 			$(D_UTILS)print_error.c\
@@ -44,6 +44,8 @@ SRCS	= main.c\
 			$(D_SORT)sort_args_three_b.c\
 			$(D_SORT)sort_args_under_three.c\
 			$(D_SORT)sort_args_five.c\
+			$(D_STACK)linkeddeque.c\
+			$(D_STACK)linkeddeque2.c\
 
 			
 
