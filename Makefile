@@ -36,6 +36,7 @@ SRCS	= main.c\
 			$(D_FUNCTION)ft_rotate.c\
 			$(D_FUNCTION)ft_reverse_rotate.c\
 			$(D_SORT)a_to_b.c\
+			$(D_SORT)b_to_a.c\
 			$(D_SORT)sort_args_three_a.c\
 			$(D_SORT)sort_args_three_b.c\
 			$(D_SORT)sort_args_under_three.c\

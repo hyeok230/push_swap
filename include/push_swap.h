@@ -94,6 +94,7 @@ void ft_pb(t_LinkedDeque *a, t_LinkedDeque *b);
 int rotate_stack(t_LinkedDeque *stack);
 void ft_ra(t_LinkedDeque *a);
 void ft_rb(t_LinkedDeque *b);
+void ft_rr(t_LinkedDeque *a, t_LinkedDeque *b);
 
 /*
 ** =============================================================================
@@ -104,6 +105,7 @@ void ft_rb(t_LinkedDeque *b);
 int reverse_rotate_stack(t_LinkedDeque *stack);
 void ft_rra(t_LinkedDeque *a);
 void ft_rrb(t_LinkedDeque *b);
+void ft_rrr(t_LinkedDeque *a, t_LinkedDeque *b);
 
 /*
 ** =============================================================================
@@ -112,7 +114,20 @@ void ft_rrb(t_LinkedDeque *b);
 */
 
 void init_sort(t_sort *sort);
+void select_pivot(int r, t_LinkedDeque *stack, t_sort *sort);
+void reverse_rotate_a(t_sort sort, t_LinkedDeque *a, t_LinkedDeque *b);
+void reverse_rotate_b(t_sort sort, t_LinkedDeque *a, t_LinkedDeque *b);
+void a_to_b_sub(t_sort *sort, t_LinkedDeque *a, t_LinkedDeque *b);
 void a_to_b(int r, t_LinkedDeque *a, t_LinkedDeque *b);
+
+/*
+** =============================================================================
+** a_to_b.c
+** =============================================================================
+*/
+
+void b_to_a_sub(t_sort *sort, t_LinkedDeque *a, t_LinkedDeque *b);
+void b_to_a(int r, t_LinkedDeque *a, t_LinkedDeque *b);
 
 /*
 ** =============================================================================
@@ -130,7 +145,9 @@ void sort_args_three_a(int r, t_LinkedDeque *a);
 ** sort_args_three_b.c
 ** =============================================================================
 */
-
+void b_three_min_top(t_LinkedDeque *b, int max);
+void b_three_min_mid(t_LinkedDeque *b, int max);
+void b_three_min_bottom(t_LinkedDeque *b, int max);
 void sort_args_three_b(int r, t_LinkedDeque *a, t_LinkedDeque *b);
 
 /*
@@ -152,5 +169,6 @@ void sort_args_five_a(int five, t_LinkedDeque *a, t_LinkedDeque *b);
 void sort_args_five_b(int five, t_LinkedDeque *a, t_LinkedDeque *b);
 void sort_args_five(int r, t_LinkedDeque *a, t_LinkedDeque *b, int flag);
 void sort_five(t_LinkedDeque *a, t_LinkedDeque *b);
+void sort_args_three_five(int r, t_LinkedDeque *a, t_LinkedDeque *b, int flag);
 
 #endif

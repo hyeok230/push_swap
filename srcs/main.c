@@ -1,9 +1,5 @@
 #include "push_swap.h"
 
-// void push_swap() {
-
-// }
-
 int ft_isdigit(char c) {
     if (c >= '0' && c <= '9')
         return (TRUE);
@@ -136,9 +132,9 @@ int main(int argc, char** argv) {
     a = createLinkedDeque();
     init_a(a, argc, argv);
     b = createLinkedDeque();
-    // if (a->currentElementCount == 5) 
-    //     5일 경우
-    // else
-    a_to_b(a->currentElementCount, a, b);
+    if (a->currentElementCount == 5) 
+        sort_five(a, b);
+    else
+        a_to_b(a->currentElementCount, a, b);
     free_all(a, b);
 }

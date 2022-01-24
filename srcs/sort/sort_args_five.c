@@ -88,3 +88,11 @@ void sort_five(t_LinkedDeque *a, t_LinkedDeque *b)
     sort_args_three_a(3, a);
     sort_args_two(a, b, B);   
 }
+
+void sort_args_three_five(int r, t_LinkedDeque *a, t_LinkedDeque *b, int flag)
+{
+    if (r <= 3)
+        sort_args_under_three(r, a, b, flag);
+    if (r == 5)
+        sort_args_five(r, a, b, flag);
+}
