@@ -136,10 +136,10 @@ void ft_rrr(t_LinkedDeque *a, t_LinkedDeque *b);
 
 void init_sort(t_sort *sort);
 void select_pivot(int r, t_LinkedDeque *stack, t_sort *sort);
-void reverse_rotate_a(t_sort sort, t_LinkedDeque *a, t_LinkedDeque *b);
-void reverse_rotate_b(t_sort sort, t_LinkedDeque *a, t_LinkedDeque *b);
+void reverse_rotate_a(t_sort sort, t_LinkedDeque *a, t_LinkedDeque *b, int *start);
+void reverse_rotate_b(t_sort sort, t_LinkedDeque *a, t_LinkedDeque *b, int *start);
 void a_to_b_sub(t_sort *sort, t_LinkedDeque *a, t_LinkedDeque *b);
-void a_to_b(int r, t_LinkedDeque *a, t_LinkedDeque *b);
+void a_to_b(int r, t_LinkedDeque *a, t_LinkedDeque *b, int *start);
 
 /*
 ** =============================================================================
@@ -148,7 +148,7 @@ void a_to_b(int r, t_LinkedDeque *a, t_LinkedDeque *b);
 */
 
 void b_to_a_sub(t_sort *sort, t_LinkedDeque *a, t_LinkedDeque *b);
-void b_to_a(int r, t_LinkedDeque *a, t_LinkedDeque *b);
+void b_to_a(int r, t_LinkedDeque *a, t_LinkedDeque *b, int *start);
 
 /*
 ** =============================================================================

@@ -19,30 +19,46 @@ void select_pivot(int r, t_LinkedDeque *stack, t_sort *sort)
     sort->pivot_small = (min + sort->pivot_big) / 2; 
 }
 
-void reverse_rotate_a(t_sort sort, t_LinkedDeque *a, t_LinkedDeque *b)
+void reverse_rotate_a(t_sort sort, t_LinkedDeque *a, t_LinkedDeque *b, int *start)
 {
     int rrr;
     int rra;
 
     rrr = sort.rb;
     rra = sort.ra - sort.rb;
-    while (rrr--)
-        ft_rrr(a, b);
-    while (rra--)
-        ft_rra(a);
+    if (*start == 0)
+    {
+        while (rrr--)
+            ft_rrb(b);
+    }
+    else
+    {
+        while (rrr--)
+            ft_rrr(a, b);
+        while (rra--)
+            ft_rra(a);
+    }
 }
 
-void reverse_rotate_b(t_sort sort, t_LinkedDeque *a, t_LinkedDeque *b)
+void reverse_rotate_b(t_sort sort, t_LinkedDeque *a, t_LinkedDeque *b, int *start)
 {
     int rrr;
     int rrb;
 
     rrr = sort.ra;
     rrb = sort.rb - sort.ra;
-    while (rrr--)
-        ft_rrr(a, b);
-    while (rrb--)
-        ft_rrb(b);
+    if (*start == 0)
+    {
+        while (sort.rb--)
+            ft_rrb(b);
+    }
+    else
+    {
+        while (rrr--)
+            ft_rrr(a, b);
+        while (rrb--)
+            ft_rrb(b);
+    }
 }
 
 void a_to_b_sub(t_sort *sort, t_LinkedDeque *a, t_LinkedDeque *b)
@@ -64,7 +80,7 @@ void a_to_b_sub(t_sort *sort, t_LinkedDeque *a, t_LinkedDeque *b)
     }
 }
 
-void a_to_b(int r, t_LinkedDeque *a, t_LinkedDeque *b)
+void a_to_b(int r, t_LinkedDeque *a, t_LinkedDeque *b, int *start)
 {
     t_sort sort;
     
@@ -78,10 +94,10 @@ void a_to_b(int r, t_LinkedDeque *a, t_LinkedDeque *b)
     while (r--)
         a_to_b_sub(&sort, a, b);
     if (sort.ra > sort.rb)
-        reverse_rotate_a(sort, a, b);
+        reverse_rotate_a(sort, a, b, start);
     else
-        reverse_rotate_b(sort, a, b);
-    a_to_b(sort.ra, a, b);
-    b_to_a(sort.rb, a, b);
-    b_to_a(sort.pb - sort.rb, a, b);
+        reverse_rotate_b(sort, a, b, start);
+    a_to_b(sort.ra, a, b, start);
+    b_to_a(sort.rb, a, b, start);
+    b_to_a(sort.pb - sort.rb, a, b, start);
 }
