@@ -55,6 +55,27 @@ void free_all(t_LinkedDeque *a, t_LinkedDeque *b);
 
 /*
 ** =============================================================================
+** check_stack.c
+** =============================================================================
+*/
+
+int check_duplicate(t_LinkedDeque *stack);
+int check_sorted(t_LinkedDeque *stack);
+void check_stack(t_LinkedDeque *stack);
+
+/*
+** =============================================================================
+** util.c
+** =============================================================================
+*/
+
+int ft_isdigit(char c);
+int ft_isspace(char c);
+int ft_atoi(const char *str);
+void init_a(t_LinkedDeque *a, int argc, char** argv);
+
+/*
+** =============================================================================
 ** get_max_mid_min.c
 ** =============================================================================
 */

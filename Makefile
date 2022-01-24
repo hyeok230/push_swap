@@ -25,12 +25,15 @@ INCLUDE = -Iinclude/
 FOLDER	= ./srcs/
 D_SORT = ./sort/
 D_FUNCTION = ./function/
+D_UTILS = ./utils/
 
 SRCS	= main.c\
 			linkeddeque.c\
-			print_error.c\
-			free_stack.c\
-			get_max_mid_min.c\
+			$(D_UTILS)check_stack.c\
+			$(D_UTILS)util.c\
+			$(D_UTILS)print_error.c\
+			$(D_UTILS)free_stack.c\
+			$(D_UTILS)get_max_mid_min.c\
 			$(D_FUNCTION)ft_swap.c\
 			$(D_FUNCTION)ft_push.c\
 			$(D_FUNCTION)ft_rotate.c\
