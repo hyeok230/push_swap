@@ -6,67 +6,24 @@
 /*   By: junylee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 15:44:22 by junylee           #+#    #+#             */
-/*   Updated: 2022/01/25 16:24:48 by junylee          ###   ########.fr       */
+/*   Updated: 2022/01/25 17:31:44 by junylee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_isdigit(char c)
-{
-	if (c >= '0' && c <= '9')
-		return (TRUE);
-	return (FALSE);
-}
-
-int	ft_isspace(char c)
-{
-	if (c == '\t' || c == '\n' || c == '\v' || c == '\f'
-		|| c == '\r' || c == ' ')
-		return (TRUE);
-	else
-		return (FALSE);
-}
-
-int	ft_atoi(const char *str)
-{
-	long	ret;
-	long	sign;
-	int		i;
-
-	sign = 1;
-	i = 0;
-	ret = 0;
-	while (str[i] && ft_isspace(str[i]))
-		i++;
-	if (str[i] == '-')
-		sign = -1;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	if (ft_isdigit(str[i]) == FALSE)
-		arg_error();
-	while (str[i])
-	{
-		if (ft_isdigit(str[i]) == FALSE)
-			arg_error();
-		ret = ret * 10 + (str[i] - '0');
-		if ((ret > 2147483647 && sign == 1) || (ret > 2147483648 && sign == -1))
-			int_error();
-		i++;
-	}
-	return (sign * ret);
-}
-
-void	init_a(t_LinkedDeque *a, int argc, char	**argv)
+void	set_stack_a(t_LinkedDeque *a, char *argv)
 {
 	int			i;
 	int			num;
 	t_DequeNode	element;
+	char		**args;
 
-	i = 1;
-	while (i < argc)
+	i = 0;
+	args = ft_split(argv, ' ');
+	while (args[i])
 	{
-		num = ft_atoi(argv[i]);
+		num = ft_atoi(args[i]);
 		element.data = num;
 		element.pLLink = NULL;
 		element.pRLink = NULL;
@@ -75,6 +32,18 @@ void	init_a(t_LinkedDeque *a, int argc, char	**argv)
 			free_stack(a);
 			insert_error();
 		}
+		i++;
+	}
+}
+
+void	init_a(t_LinkedDeque *a, int argc, char	**argv)
+{
+	int			i;
+
+	i = 1;
+	while (i < argc)
+	{
+		set_stack_a(a, argv[i]);
 		i++;
 	}
 	check_stack(a);

@@ -6,7 +6,7 @@
 /*   By: junylee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 16:32:46 by junylee           #+#    #+#             */
-/*   Updated: 2022/01/25 16:38:28 by junylee          ###   ########.fr       */
+/*   Updated: 2022/01/25 17:23:40 by junylee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,11 +81,31 @@ void	check_stack(t_LinkedDeque *stack);
 ** =============================================================================
 */
 
+void	set_stack_a(t_LinkedDeque *a, char *argv);
+void	init_a(t_LinkedDeque *a, int argc, char **argv);
+void	init_sort(t_sort *sort);
+
+/*
+** =============================================================================
+** ft_atoi.c
+** =============================================================================
+*/
+
 int		ft_isdigit(char c);
 int		ft_isspace(char c);
 int		ft_atoi(const char *str);
-void	init_a(t_LinkedDeque *a, int argc, char **argv);
-void	init_sort(t_sort *sort);
+
+/*
+** =============================================================================
+** ft_split.c
+** =============================================================================
+*/
+
+void	ft_fall(char **ret);
+int		ft_isdeli(char c, char deli);
+int		ft_count(char *s, char c);
+char	*ft_cpy(char *s, char c, int *offset);
+char	**ft_split(char const *s, char c);
 
 /*
 ** =============================================================================
