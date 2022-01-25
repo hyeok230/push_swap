@@ -32,8 +32,10 @@ void	set_stack_a(t_LinkedDeque *a, char *argv)
 			free_stack(a);
 			insert_error();
 		}
+		free(args[i]);
 		i++;
 	}
+	free(args);
 }
 
 void	init_a(t_LinkedDeque *a, int argc, char	**argv)
