@@ -33,6 +33,7 @@ SRCS	= main.c\
 			$(D_UTILS)util.c\
 			$(D_UTILS)ft_atoi.c\
 			$(D_UTILS)ft_split.c\
+			$(D_UTILS)ft_split2.c\
 			$(D_UTILS)print_error.c\
 			$(D_UTILS)free_stack.c\
 			$(D_UTILS)get_max_mid_min.c\
